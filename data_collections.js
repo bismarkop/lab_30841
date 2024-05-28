@@ -4,11 +4,11 @@ const csv = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,
 
 // Declare a variable that stores the number of columns in each row of data within the CSV. Instead of hard-coding four columns per row, expand your code to accept any number of columns. This should be calculated dynamically based on the first row of data.
 let rows = csv.split("\n")
-let col_scan = rows[0]
+let headers = rows[0]
 let columns = 0
-for (let char in col_scan) {
+for (let char in headers) {
     
-    if (col_scan[char] === ",") {
+    if (headers[char] === ",") {
         columns += 1
     }
 }
