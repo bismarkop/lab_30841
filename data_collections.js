@@ -2,6 +2,19 @@ const csv = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,
 
 // const csv = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n2,0.49,0.066,0.066\n3,0.98,0.087,0.080\n4,1.47,0.116,0.108\n5,1.96,0.142,0.138\n6,2.45,0.166,0.158\n7,2.94,0.193,0.174\n8,3.43,0.204,0.192\n9,3.92,0.226,0.205\n10,4.41,0.238,0.232"
 
+// Declare a variable that stores the number of columns in each row of data within the CSV. Instead of hard-coding four columns per row, expand your code to accept any number of columns. This should be calculated dynamically based on the first row of data.
+let rows = csv.split("\n")
+let col_scan = rows[0]
+let columns = 0
+for (let char in col_scan) {
+    
+    if (col_scan[char] === ",") {
+        columns += 1
+    }
+}
+console.log(`There are ${columns + 1} columns.`) // I included the + 1 because there will be a column following every comma, no matter how many columns there are *Come back to this if you find a way to do it better.*
+
+
 
 let cell1 = ""
 let cell2 = ""
@@ -15,7 +28,7 @@ let currentCell = 0
 for (let i = 0; i <= csv.length; i++) {
     let char = csv[i]
     if (i === csv.length) { // This allows for the last row to be added since there's no \n after it
-        console.log(cell1, cell2, cell3, cell4)
+        // console.log(cell1, cell2, cell3, cell4)
     }
     // Check if the character is a comma, indicating the end of a cell - After cell1 (ID) -> cell2 (Name) -> cell 3 (Occ) -> cell4 (age) - This all forms the first row before the new line (\n)
     else if (char === ',') {
@@ -24,7 +37,7 @@ for (let i = 0; i <= csv.length; i++) {
     // Check if the character is a newline, indicating the end of a row
     else if (char === '\n') {
         // Log and print the current row's data
-        console.log(cell1, cell2, cell3, cell4)
+        // console.log(cell1, cell2, cell3, cell4)
 
         // Reset cell variables for the next row
         cell1 = ""
