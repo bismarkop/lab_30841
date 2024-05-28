@@ -61,6 +61,9 @@ for (let i=0; i<newRowData.length; i++) {
 } 
 console.log(avgAge)
 
+// Part 5 - transform the final set of data back into CSV format.
+newRowData = JSON.stringify(newRowData)
+console.log(newRowData)
 
 let cell1 = ""
 let cell2 = ""
