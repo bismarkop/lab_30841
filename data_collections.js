@@ -5,15 +5,9 @@ const csv = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,
 // Declare a variable that stores the number of columns in each row of data within the CSV. Instead of hard-coding four columns per row, expand your code to accept any number of columns. This should be calculated dynamically based on the first row of data.
 let rows = csv.split("\n")
 let headers = rows[0]
-let columns = 0
-for (let char in headers) {
-    
-    if (headers[char] === ",") {
-        columns += 1
-    }
-}
-console.log(`There are ${columns + 1} columns.`) // I included the + 1 because there will be a column following every comma, no matter how many columns there are *Come back to this if you find a way to do it better.*
-
+let columns = headers.split(",") // Each piece of data separated by a comma is a column
+let columnCount = columns.length
+console.log(columnCount) 
 
 
 let cell1 = ""
