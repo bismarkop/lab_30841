@@ -58,7 +58,8 @@ for (let i=0; i<newRowData.length; i++) {
     ages += age
     avgAge = ages / newRowData.length
     
-} console.log(avgAge)
+} 
+console.log(avgAge)
 
 
 let cell1 = ""
